@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}'
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {},
     colors: {
@@ -11,11 +8,11 @@ export default {
       periwinkleBlue: '#D0D6F9',
       white: '#FFFF',
       transparent: 'transparent',
-      current: 'currentColor'
+      current: 'currentColor',
     },
     fontFamily: {
       barlow: ['Barlow Condensed', 'sans-serif'],
-      bellefair: ['Bellefair', 'serif']
+      bellefair: ['Bellefair', 'serif'],
     },
     fontSize: {
       sm: ['14px', '16.8px'],
@@ -25,8 +22,8 @@ export default {
       lg: ['32px', '36.67px'],
       xl: ['56px', '64.18px'],
       '2xl': ['100px', '114.6px'],
-      '3xl': ['150px', '171.9px']
-    }
+      '3xl': ['150px', '171.9px'],
+    },
   },
-  plugins: []
+  plugins: [],
 }

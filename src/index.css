@@ -3,39 +3,39 @@
 @tailwind utilities;
 
 @layer components {
-    .heading-1  {
-        @apply font-bellefair text-3xl font-normal;
-    }
+  .heading-1 {
+    @apply font-bellefair text-3xl font-normal;
+  }
 
-    .heading-2 {
-        @apply font-bellefair text-2xl font-normal;
-    }
+  .heading-2 {
+    @apply font-bellefair text-2xl font-normal;
+  }
 
-    .heading-3 {
-        @apply font-bellefair text-xl font-normal;
-    }
+  .heading-3 {
+    @apply font-bellefair text-xl font-normal;
+  }
 
-    .heading-4 {
-        @apply font-bellefair text-lg font-normal;
-    }
+  .heading-4 {
+    @apply font-bellefair text-lg font-normal;
+  }
 
-    .heading-5 {
-        @apply font-barlow text-md tracking-wide font-normal;
-    }
+  .heading-5 {
+    @apply font-barlow text-md tracking-wide font-normal;
+  }
 
-    .subheading-1 {
-        @apply font-bellefair text-md font-normal;
-    }
+  .subheading-1 {
+    @apply font-bellefair text-md font-normal;
+  }
 
-    .subheading-2 {
-        @apply font-barlow text-sm tracking-wide font-normal;
-    }
+  .subheading-2 {
+    @apply font-barlow text-sm tracking-wide font-normal;
+  }
 
-    .nav-text {
-        @apply font-barlow text-base tracking-wider;
-    }
+  .nav-text {
+    @apply font-barlow text-base tracking-wider;
+  }
 
-    .body {
-        @apply font-barlow text-body;
-    }
+  .body {
+    @apply font-barlow text-body;
+  }
 }
