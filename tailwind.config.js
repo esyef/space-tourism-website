@@ -18,10 +18,14 @@ export default {
       bellefair: ['Bellefair', 'serif']
     },
     fontSize: {
-      sm: ['14px'],
-      base: ['16px', '28px'],
-      lg: ['32px', '56px'],
-      xl: ['100px', '150px']
+      sm: ['14px', '16.8px'],
+      base: ['16px', '19.2px'],
+      body: ['18px', '32px'],
+      md: ['28px', '33.6px'],
+      lg: ['32px', '36.67px'],
+      xl: ['56px', '64.18px'],
+      '2xl': ['100px', '114.6px'],
+      '3xl': ['150px', '171.9px']
     }
   },
   plugins: []
