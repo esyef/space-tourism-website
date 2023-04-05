@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer components {
+  /* design system */
   .heading-1 {
     @apply font-bellefair text-3xl font-normal;
   }
@@ -38,4 +39,24 @@
   .body {
     @apply font-barlow text-body;
   }
+
 }
+
+  /* backgrounds images */
+  .bg-home {
+    background-image: url('./assets/home/background-home-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media screen and (min-width: 768px) {
+    .bg-home {
+      background-image: url('./assets/home/background-home-tablet.jpg');
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .bg-home {
+      background-image: url('./assets/home/background-home-desktop.jpg');
+    }
+  }
