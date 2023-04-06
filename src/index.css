@@ -4,6 +4,17 @@
 
 @layer components {
   /* design system */
+  .heading-1,
+  .heading-2,
+  .heading-3,
+  .heading-4,
+  .heading-5,
+  .subheading-1,
+  .subheading-2,
+  .nav-text {
+    @apply uppercase;
+  }
+
   .heading-1 {
     @apply font-bellefair text-3xl font-normal;
   }
