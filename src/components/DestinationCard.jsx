@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 import Slidertext from './Slidertext'
-import moon from '../assets/destination/image-moon.webp'
 
 const tabs = [
   { value: 'moon', path: '/moon' },
@@ -13,31 +13,39 @@ const footer = [
   { label: 'est. travel time', value: '3 days' },
 ]
 
-const DestinationCard = () => {
+const DestinationCard = ({ onClick, data }) => {
+  const { name, images, description } = data
+  console.log(data)
   return (
     <article className='grid grid-cols-1 xl:grid-cols-2 justify-items-center xl:justify-items-start gap-y-[26px] md:gap-y-[56px] md:max-w-[573px] xl:max-w-[1047px] mx-auto pb-[58px] md:pb-[62px] '>
       <section>
-        <img src={moon} alt='' className='object-cover' />
+        <img
+          src={images.webp}
+          alt={`image destination ${name}`}
+          className='object-cover'
+        />
       </section>
 
       <section className='flex flex-col items-center xl:items-start'>
         <header className='mb-5 xl:mb-[37px]'>
           <nav>
             {tabs.map(({ value, path }) => (
-              <Slidertext path={path} value={value} key={value} />
+              <Slidertext
+                path={path}
+                value={value}
+                key={value}
+                onClick={() => onClick(value)}
+              />
             ))}
           </nav>
         </header>
 
         <section className='text-center xl:text-left mb-8'>
           <h1 className='uppercase text-white heading-3 md:text-[80px] xl:text-2xl md:leading-[91.68px]'>
-            Moon
+            {name}
           </h1>
           <p className='text-periwinkleBlue text-[15px] font-barlow md:text-base xl:text-body'>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam
-            eveniet, totam incidunt aliquid sequi velit. Aperiam magni commodi
-            totam nihil reiciendis fuga. Recusandae expedita totam a sequi,
-            maxime et ipsa!
+            {description}
           </p>
         </section>
 
