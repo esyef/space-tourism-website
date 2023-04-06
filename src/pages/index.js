@@ -1,3 +1,4 @@
+import Destination from './destination/Destination'
 import Home from './home/Home'
 
-export { Home }
+export { Home, Destination }

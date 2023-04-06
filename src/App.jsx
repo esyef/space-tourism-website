@@ -1,9 +1,10 @@
-import { Home } from './pages'
+import { Destination } from './pages'
 
 const App = () => {
   return (
     <div className=''>
-      <Home />
+      {/* <Home /> */}
+      <Destination />
     </div>
   )
 }
