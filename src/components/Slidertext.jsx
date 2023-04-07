@@ -2,8 +2,8 @@
 const Slidertext = ({ value, path, onClick }) => {
   return (
     <a
-      // href={path}
-      className='text-sm md:text-base text-white uppercase hover:border-b-4 pb-8'
+      href={`${path}`}
+      className='text-sm md:text-base text-periwinkleBlue uppercase tab-txt'
       onClick={(e) => {
         e.preventDefault()
         onClick()

@@ -124,4 +124,33 @@
     background-color: #fff;
     mix-blend-mode: normal;
   }
+
+  .tab-txt {
+    position: relative;
+  }
+  .tab-txt::after,
+  .tab-txt::before {
+    content: '';
+    background-color: #d0d6f9;
+    width: 0;
+    bottom: 0;
+    height: 3px;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    opacity: 0.5;
+  }
+  .tab-txt::after {
+    left: 50%;
+  }
+  .tab-txt::before {
+    right: 50%;
+  }
+  .tab-txt:hover::before,
+  .tab-txt:hover::after {
+    width: 50%;
+  }
+
+  .link-active {
+    border-bottom: 3px solid white;
+  }
 }
