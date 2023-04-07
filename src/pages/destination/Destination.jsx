@@ -49,15 +49,14 @@ const Destination = () => {
             Pick your destination
           </h1>
         </header>
-        <section>
-          {filter.map(({ ...data }) => (
-            <DestinationCard
-              onClick={selectedDestination}
-              key={data.name}
-              data={data}
-            />
-          ))}
-        </section>
+
+        {filter.map(({ ...data }) => (
+          <DestinationCard
+            onClick={selectedDestination}
+            key={data.name}
+            data={data}
+          />
+        ))}
       </div>
     </main>
   )

@@ -8,14 +8,12 @@ const tabs = [
   { value: 'titan', path: '/titan' },
 ]
 
-const footer = [
-  { label: 'avg. distance', value: '384,400 km' },
-  { label: 'est. travel time', value: '3 days' },
-]
-
 const DestinationCard = ({ onClick, data }) => {
-  const { name, images, description } = data
-  console.log(data)
+  const { name, images, description, travel, distance } = data
+  const footer = [
+    { label: 'avg. distance', value: distance },
+    { label: 'est. travel time', value: travel },
+  ]
   return (
     <article className='grid grid-cols-1 xl:grid-cols-2 justify-items-center xl:justify-items-start gap-y-[26px] md:gap-y-[56px] md:max-w-[573px] xl:max-w-[1047px] mx-auto pb-[58px] md:pb-[62px] '>
       <section>
@@ -26,18 +24,16 @@ const DestinationCard = ({ onClick, data }) => {
         />
       </section>
 
-      <section className='flex flex-col items-center xl:items-start'>
-        <header className='mb-5 xl:mb-[37px]'>
-          <nav>
-            {tabs.map(({ value, path }) => (
-              <Slidertext
-                path={path}
-                value={value}
-                key={value}
-                onClick={() => onClick(value)}
-              />
-            ))}
-          </nav>
+      <section className='flex flex-col items-center xl:items-start '>
+        <header className='inline-flex gap-8 h-10'>
+          {tabs.map(({ value, path }) => (
+            <Slidertext
+              path={path}
+              value={value}
+              key={value}
+              onClick={() => onClick(value)}
+            />
+          ))}
         </header>
 
         <section className='text-center xl:text-left mb-8'>

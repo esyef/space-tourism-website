@@ -1,13 +1,16 @@
 /* eslint-disable react/prop-types */
 const Slidertext = ({ value, path, onClick }) => {
   return (
-    <button
+    <a
       // href={path}
-      className='text-sm md:text-base text-white xl:hover:border-b-[3px] xl:hover:border-white xl:pb-2 uppercase last:mr-0 mr-8'
-      onClick={onClick}
+      className='text-sm md:text-base text-white uppercase hover:border-b-4 pb-8'
+      onClick={(e) => {
+        e.preventDefault()
+        onClick()
+      }}
     >
       {value}
-    </button>
+    </a>
   )
 }
 export default Slidertext
