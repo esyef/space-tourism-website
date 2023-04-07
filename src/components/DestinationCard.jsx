@@ -20,7 +20,7 @@ const DestinationCard = ({ onClick, data }) => {
         <img
           src={images.webp}
           alt={`image destination ${name}`}
-          className='object-cover'
+          className='object-cover fade-in'
         />
       </section>
 
@@ -36,7 +36,7 @@ const DestinationCard = ({ onClick, data }) => {
           ))}
         </header>
 
-        <section className='text-center xl:text-left mb-8'>
+        <section className='text-center xl:text-left mb-8 fade-in'>
           <h1 className='uppercase text-white heading-3 md:text-[80px] xl:text-2xl md:leading-[91.68px]'>
             {name}
           </h1>
@@ -45,7 +45,7 @@ const DestinationCard = ({ onClick, data }) => {
           </p>
         </section>
 
-        <footer className='border-t-[1px] border-[#383B4B] pt-8 w-full'>
+        <footer className='border-t-[1px] border-[#383B4B] pt-8 w-full fade-in'>
           <ul className='flex flex-col md:flex-row justify-center gap-8 md:gap-3 xl:justify-start xl:gap-20'>
             {footer.map(({ label, value }) => (
               <li key={label} className='text-center xl:text-left'>
