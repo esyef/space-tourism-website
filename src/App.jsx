@@ -1,10 +1,11 @@
-import { Destination } from './pages'
+import { Crew } from './pages'
 
 const App = () => {
   return (
-    <div className=''>
+    <div className='bg-black'>
       {/* <Home /> */}
-      <Destination />
+      {/* <Destination /> */}
+      <Crew />
     </div>
   )
 }
