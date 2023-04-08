@@ -72,6 +72,15 @@
   background-repeat: no-repeat;
 }
 
+.bg-tech {
+  background-image: url('./assets/technology/background-technology-mobile.jpg');
+  background-size: cover;
+  background-position: center center;
+  min-height: 100vh;
+  opacity: 0.25;
+  mix-blend-mode: screen;
+  background-repeat: no-repeat;
+}
 .bg-home {
   background-image: url('./assets/home/background-home-mobile.jpg');
 }
@@ -92,6 +101,10 @@
   .bg-crew {
     background-image: url('./assets/crew/background-crew-tablet.jpg');
   }
+
+  .bg-tech {
+    background-image: url('./assets/technology/background-technology-tablet.jpg');
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -105,6 +118,10 @@
 
   .bg-crew {
     background-image: url('./assets/crew/background-crew-desktop.jpg');
+  }
+
+  .bg-tech {
+    background-image: url('./assets/technology/background-technology-desktop.jpg');
   }
 }
 
