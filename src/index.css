@@ -62,25 +62,34 @@
   min-height: 100vh;
 }
 
-.bg-crew {
-  background-image: url('./assets/crew/background-crew-mobile.jpg');
-  background-size: cover;
-  background-position: center center;
-  min-height: 100vh;
-  opacity: 0.25;
-  mix-blend-mode: screen;
-  background-repeat: no-repeat;
+.bg-crew,
+.bg-tech {
+  position: relative;
 }
 
-.bg-tech {
-  background-image: url('./assets/technology/background-technology-mobile.jpg');
-  background-size: cover;
-  background-position: center center;
-  min-height: 100vh;
-  opacity: 0.25;
-  mix-blend-mode: screen;
-  background-repeat: no-repeat;
+.bg-crew::before {
+  background-image: url('./assets/crew/background-crew-mobile.jpg');
 }
+.bg-tech::before {
+  background-image: url('./assets/technology/background-technology-mobile.jpg');
+}
+
+.bg-crew::before,
+.bg-tech::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.25;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  mix-blend-mode: screen;
+}
+
 .bg-home {
   background-image: url('./assets/home/background-home-mobile.jpg');
 }
@@ -98,11 +107,11 @@
     background-image: url('./assets/destination/background-destination-tablet.jpg');
   }
 
-  .bg-crew {
+  .bg-crew::before {
     background-image: url('./assets/crew/background-crew-tablet.jpg');
   }
 
-  .bg-tech {
+  .bg-tech::before {
     background-image: url('./assets/technology/background-technology-tablet.jpg');
   }
 }
@@ -116,11 +125,11 @@
     background-image: url('./assets/destination/background-destination-desktop.jpg');
   }
 
-  .bg-crew {
+  .bg-crew::before {
     background-image: url('./assets/crew/background-crew-desktop.jpg');
   }
 
-  .bg-tech {
+  .bg-tech::before {
     background-image: url('./assets/technology/background-technology-desktop.jpg');
   }
 }
@@ -207,4 +216,21 @@
   to {
     opacity: 1;
   }
+}
+
+.round-button {
+  aspect-ratio: 3 / 1;
+  border-radius: 50%;
+  border: 1px solid rgba(236, 233, 233, 0.25);
+}
+
+.banner {
+  background-image: url('./assets/technology/image-launch-vehicle-landscape.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  aspect-ratio: auto;
 }

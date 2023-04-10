@@ -33,7 +33,7 @@ const Crew = () => {
   const crewInfo = state.crew[state.index]
 
   return (
-    <main className='relative'>
+    <main className='relative bg-crew'>
       <div className='container mx-auto max-sm:w-11/12 pt-6 relative z-[1] '>
         <section className='grid grid-cols-1 xl:grid-cols-4 grid-flow-row'>
           {/* title page */}
@@ -80,9 +80,8 @@ const Crew = () => {
           </figure>
         </section>
       </div>
-
-      {/* bg image */}
-      <div className='bg-crew absolute top-0 bottom-0 left-0 right-0 inset-0' />
+      {/* bg image
+      <div className='bg-crew absolute top-0 bottom-0 left-0 right-0 inset-0' /> */}
     </main>
   )
 }
