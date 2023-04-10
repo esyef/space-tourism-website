@@ -1,9 +1,38 @@
+import { useReducer, useRef } from 'react'
 import { SliderNumber } from '../../components'
 import data from '../../data.json'
 
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'update_currentTech': {
+      return {
+        curretnIndex: action.value,
+      }
+    }
+
+    default: {
+      return state
+    }
+  }
+}
+
+const initialState = {
+  curretnIndex: 0,
+}
+
 const Technology = () => {
-  const tech = data.technology
-  const info = tech[0]
+  const [state, dispatch] = useReducer(reducer, initialState)
+  const ref = useRef(null)
+
+  const updateCurrentTech = (value) => {
+    dispatch({
+      type: 'update_currentTech',
+      value,
+    })
+  }
+
+  const { name, images, description } = data.technology[state.curretnIndex]
+
   return (
     <main className='relative py-[81px] overflow-hidden'>
       <section className='w-11/12 sm:container mx-auto grid grid-cols-1 max-lg:gap-y-8 lg:grid-cols-4 lg:grid-flow-row'>
@@ -16,11 +45,14 @@ const Technology = () => {
         </section>
 
         {/* page image */}
-        <figure className='h-[170px] md:h-[310px] xl:h-auto  lg:col-[3_/span_2] lg:row-[2_/span_2] justify-self-end border-2 border-white'>
-          <div className='banner h-[170px] md:h-[310px] lg:hidden' />
+        <figure className='h-[170px] md:h-[310px] xl:h-auto  lg:col-[3_/span_2] lg:row-[2_/span_2] justify-self-end'>
+          <div
+            className={`h-[170px] md:h-[310px] lg:hidden banner`}
+            style={{ backgroundImage: `url(${images.landscape})` }}
+          />
           <img
-            src={info.images.portrait}
-            className='hidden lg:block max-w-full object-contain'
+            src={images.portrait}
+            className='hidden lg:block aspect-square object-contain'
             width={515}
             height={527}
           />
@@ -28,10 +60,20 @@ const Technology = () => {
 
         {/* page content */}
         <section className='md:justify-self-center lg:justify-self-start  lg:col-[1_/span_2] md:w-[458px] lg:row-[2_/span_2] lg:self-center lg:w-full'>
-          <div className='flex flex-col max-lg:items-center gap-8 lg:justify-start lg:flex-row lg:gap-[80px]'>
+          <div className='flex flex-col max-lg:items-center gap-8 lg:justify-start lg:flex-row  lg:gap-[80px]'>
             {/* slider numbers */}
-            <div className='inline-block'>
-              <SliderNumber number={1} />
+            <div className='inline-flex lg:flex-col gap-4 active:bg-black'>
+              {data.technology.map((sidebar, i) => (
+                <SliderNumber
+                  number={i + 1}
+                  onClick={() => updateCurrentTech(i)}
+                  index={state.curretnIndex}
+                  key={sidebar.name}
+                  name={name}
+                  useref={ref}
+                  className={state.curretnIndex === i ? 'active' : ''}
+                />
+              ))}
             </div>
 
             {/* details content */}
@@ -42,12 +84,12 @@ const Technology = () => {
                 </h3>
                 <h2 className='text-white font-bellefair text-[24px]  md:text-[40px]  lg:text-xl'>
                   {' '}
-                  {info.name}
+                  {name}
                 </h2>
               </section>
               <section>
                 <p className='font-barlow text-[15px] text-periwinkleBlue lg:max-w-[444px] lg:text-[18px]'>
-                  {info.description}
+                  {description}
                 </p>
               </section>
             </aside>

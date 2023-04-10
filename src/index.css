@@ -220,17 +220,26 @@
 
 .round-button {
   aspect-ratio: 3 / 1;
-  border-radius: 50%;
+  border-radius: 100%;
   border: 1px solid rgba(236, 233, 233, 0.25);
+}
+.round-button:hover {
+  border-color: rgba(236, 233, 233);
 }
 
 .banner {
-  background-image: url('./assets/technology/image-launch-vehicle-landscape.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   position: absolute;
   left: 0;
   right: 0;
-  aspect-ratio: auto;
+}
+
+.active {
+  background: white;
+}
+
+.active > span {
+  color: #0b0d17;
 }
