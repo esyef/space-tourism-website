@@ -1,4 +1,4 @@
-import { useReducer, useRef } from 'react'
+import { useReducer } from 'react'
 import { SliderNumber } from '../../components'
 import data from '../../data.json'
 
@@ -22,7 +22,6 @@ const initialState = {
 
 const Technology = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
-  const ref = useRef(null)
 
   const updateCurrentTech = (value) => {
     dispatch({
@@ -62,22 +61,19 @@ const Technology = () => {
         <section className='md:justify-self-center lg:justify-self-start  lg:col-[1_/span_2] md:w-[458px] lg:row-[2_/span_2] lg:self-center lg:w-full'>
           <div className='flex flex-col max-lg:items-center gap-8 lg:justify-start lg:flex-row  lg:gap-[80px]'>
             {/* slider numbers */}
-            <div className='inline-flex lg:flex-col gap-4 active:bg-black'>
+            <aside className='inline-flex lg:flex-col gap-4'>
               {data.technology.map((sidebar, i) => (
                 <SliderNumber
                   number={i + 1}
                   onClick={() => updateCurrentTech(i)}
-                  index={state.curretnIndex}
                   key={sidebar.name}
-                  name={name}
-                  useref={ref}
                   className={state.curretnIndex === i ? 'active' : ''}
                 />
               ))}
-            </div>
+            </aside>
 
             {/* details content */}
-            <aside className='max-lg:text-center flex flex-col gap-4'>
+            <section className='max-lg:text-center flex flex-col gap-4'>
               <section className='uppercase'>
                 <h3 className='text-periwinkleBlue font-barlow text-sm mb-[9px] tracking-[2.7px]'>
                   the terminology...
@@ -92,7 +88,7 @@ const Technology = () => {
                   {description}
                 </p>
               </section>
-            </aside>
+            </section>
           </div>
         </section>
       </section>{' '}
